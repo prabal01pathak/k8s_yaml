@@ -1,4 +1,5 @@
 apiVersion: apps/v1
+kind: Deployment
 metadata: 
   labels: 
     app: mongo-express 
@@ -30,6 +31,6 @@ spec:
               key: password 
         - name: ME_CONFIG_MONGODB_SERVER 
             valueFrom: 
-              ConfiMapRef: 
-                name: mongo-configmap 
+              ConfiMapKeyRef: 
+                name: mongo-config
                 key: database_url
